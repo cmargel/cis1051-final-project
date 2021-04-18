@@ -1,0 +1,28 @@
+def initialize_grid():
+  grid = [[0,0,2,0],[0,0,0,0],[0,2,0,0],[0,0,0,0]]
+  display_grid(grid)
+  rules = "Enter w to shift the board up \n Enter s to shift the board right \n Enter z to shift the board down \n Enter a to shift the board left"
+  print(rules)
+
+def display_grid(grid):
+ for row in grid:
+      print(row, "\t")
+
+
+def make_move():
+  move = input("Which direction do you want to shift the board? ")
+
+  if move == "w":
+    pass
+  elif move == "s":
+    print("move right")
+  elif move == "z":
+    print("move down")
+  elif move == "a":
+    print("move left")
+  else:
+    print("Invalid key. Enter a valid move.")
+    make_move()
+
+
+initialize_grid()
