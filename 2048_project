@@ -1,12 +1,50 @@
+import random as r
+
 def initialize_grid():
-  grid = [[0,0,2,0],[0,0,0,0],[0,2,0,0],[0,0,0,0]]
-  display_grid(grid)
+  grid = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+  #print(grid)
   rules = "Enter w to shift the board up \n Enter s to shift the board right \n Enter z to shift the board down \n Enter a to shift the board left"
   print(rules)
+  add_new_tile(grid)
+  return grid
 
-def display_grid(grid):
- for row in grid:
-      print(row, "\t")
+def add_new_tile(grid):
+  #choose random position on grid
+  x = r.randint(0,3)
+  y = r.randint(0,3)
+
+  while(grid[x] != 0):
+    x = r.randint(0,3)
+    y = r.randint(0,3)
+  
+  grid[x] = 2
+
+def win_condition(grid):
+  for x in range(4):
+    for y in range(4):
+      #User has reached 2048 on a tile
+      if(grid[x][y] == 2048):
+        return 'won'
+      #There is at least one empty space on the grid left
+      elif(grid[x][y] == 0):
+        return 'game not over'
+
+      else:
+        #Merging in one direction will still combine some tiles
+        for x in range(3):
+          for y in range(3):
+            if(grid[x][y]==grid[x+1][y] or grid[x][y]==grid[x][y+1]):
+              return 'game not over'
+        
+        for x in range(3):
+          if(grid[x][3] == grid[x+1][x]):
+            return 'game not over'
+        
+        for y in range(3):
+          if(grid[3][y] == grid[3][y+1]):
+            return 'game not over'
+
+        return 'lost'
 
 
 def make_move():
@@ -23,6 +61,3 @@ def make_move():
   else:
     print("Invalid key. Enter a valid move.")
     make_move()
-
-
-initialize_grid()
