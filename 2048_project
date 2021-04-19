@@ -48,7 +48,7 @@ def win_condition(grid):
 
 
 def make_move():
-  move = input("Which direction do you want to shift the board? ")
+   move = input("Which direction do you want to shift the board? ")
 
   if move == "w":
     pass
@@ -61,3 +61,33 @@ def make_move():
   else:
     print("Invalid key. Enter a valid move.")
     make_move()
+    
+    
+def push_board(grid):
+   cells = 4
+   new_grid = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+   done = False
+   for x in range(cells):
+      count = cells - 1
+      for y in range(count, -1, -1):
+         if grid[x][y] != 0:
+            new_grid[x][count] = grid[x][y]
+            if y != count:
+               done = True
+            count -= 1
+   return (new_grid, done)
+   
+def merge(grid):
+   score = 0
+   done = False
+   cells = 4
+   for x in range(cells):
+      for y in range(cells -1, 0 , -1):
+         if grid[x][y] == grid[x][y-1] and grid[x][y] != 0:
+            grid[x][y] = grid[x][y] * 2
+            score += grid[x][y]
+            grid[x][y-1]=0
+            done = True
+   return (grid, done, score)
+            
+         
