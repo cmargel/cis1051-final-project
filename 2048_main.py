@@ -2,16 +2,13 @@ import random as r
 
 def initialize_game():
   grid = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
-  rules = "Enter w to shift the board up \n Enter s to shift the board right \n Enter z to shift the board down \n Enter a to shift the board left"
-  for _ in range(2):
+  rules = "Enter w to shift the board up \n Enter s to shift the board right \n Enter z to shift the board down \n Enter a to shift the board left" 
+  for i in range(2):
     add_new_tile(grid)
-  print_grid(grid)
   print(rules)
+  print_grid(grid)
   while keep_playing(grid):
-    add_new_tile(grid)
-    print_grid(grid)
     make_move(grid)
-    
   
 def print_grid(grid):
   #print each row of the grid on a new line- https://www.kite.com/python/answers/how-to-print-a-list-of-lists-in-columns-in-python
@@ -27,15 +24,18 @@ def add_new_tile(grid):
   x = r.randint(0,3)
   y = r.randint(0,3)
   tile_value = r.randint(0,1)
-
-  while(grid[x] == 0):
-    x = r.randint(0,3)
-    y = r.randint(0,3)
-  
-  if tile_value == 0:
-    grid[x][y] = 2
-  
-  grid[x][y] = 4
+  tile_added = False
+  while tile_added == False:
+    for i in range(4):
+        for j in range(4):
+            if grid[x][y] == 0:
+                if tile_value == 0:
+                    grid[x][y] = 2
+                    tile_added = True
+                else:
+                    grid[x][y] = 4
+                    tile_added = True
+            False
 
 
 def make_move(current_grid):
@@ -85,7 +85,9 @@ def move_right(current_grid):
   new_grid,done = push_board(current_grid)
   new_grid,done = merge(new_grid)
   new_grid,done = push_board(new_grid)
+  add_new_tile(new_grid)
   print_grid(new_grid)
+  return new_grid
 
 def keep_playing(grid):
   for x in range(4):
