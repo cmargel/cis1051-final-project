@@ -45,3 +45,12 @@ We hope to be able to have a fully functional game of 2048 that users can play u
 
 ## In a paragraph or more, outline your next steps. What new skills will you need to acquire? What topics will you need to research? If working with one of two classmates, who will do what?
 I will need to familiarize myself with Pygame and how to import and use those tools. My teammates and I will need to look into how to make a matrix, for the game board, and how the code would look when tiles are "combined". We will also need to do some research to learn how to use Pygame and incorporate that into the logic of the game. I will look into how to go about using Pygame and Sydney and Jo will begin the logic of the game and start coding that.
+
+#Final Reflection
+##Problems
+We had some issues getting the GUI to work while using Pygame. It took a lot of time and research to learn how to use Pygame and all of the properties that were unique to it. The hardest part was being able to initially get the screen to show up with the right things on it and not just be black. Once we figured out how to properly install Pygame and get the initial screen to show up, we had gotten past the hard part.
+We also have an issue with the game closing when the user wins or loses. No message shows up to let the user know if they won or lost. This relates to the issues we have interpreting how Pygame works.
+##Take Aways
+I learned a lot while completing this project. I have not working with functions nearly as much before this project and had to learn how to best optimize each function. It took a lot of testing to figure out what inputs each function needed to have and what each function needed to return. This project also helped me learn to keep my functions as short and concise as possible. I learned that each function should ideally have one specific purpose.
+##What I Enjoyed
+I enjoyed being able to code something fun. The 2048 game is something I've enjoyed playing on my phone and it was enjoyable trying to reacreate and really understand the logic behind it. I found it interesting to look at a game from a new persepctive and break down how exactly it works.
