@@ -50,6 +50,7 @@ I will need to familiarize myself with Pygame and how to import and use those to
 ## Problems
 We had some issues getting the GUI to work while using Pygame. It took a lot of time and research to learn how to use Pygame and all of the properties that were unique to it. The hardest part was being able to initially get the screen to show up with the right things on it and not just be black. Once we figured out how to properly install Pygame and get the initial screen to show up, we had gotten past the hard part.
 We also have an issue with the game closing when the user wins or loses. No message shows up to let the user know if they won or lost. This relates to the issues we have interpreting how Pygame works.
+We also struggled in making the logic of the 2048 game work correctly. We struggled fitting certain functions together in a way that worked and being able to pass an updated grid to a new function. After much trial and error and simplifying our functions, we were able to get the logic working correctly.
 ## Take Aways
 I learned a lot while completing this project. I have not working with functions nearly as much before this project and had to learn how to best optimize each function. It took a lot of testing to figure out what inputs each function needed to have and what each function needed to return. This project also helped me learn to keep my functions as short and concise as possible. I learned that each function should ideally have one specific purpose.
 ## What I Enjoyed
