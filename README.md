@@ -54,3 +54,5 @@ We also have an issue with the game closing when the user wins or loses. No mess
 I learned a lot while completing this project. I have not working with functions nearly as much before this project and had to learn how to best optimize each function. It took a lot of testing to figure out what inputs each function needed to have and what each function needed to return. This project also helped me learn to keep my functions as short and concise as possible. I learned that each function should ideally have one specific purpose.
 ## What I Enjoyed
 I enjoyed being able to code something fun. The 2048 game is something I've enjoyed playing on my phone and it was enjoyable trying to reacreate and really understand the logic behind it. I found it interesting to look at a game from a new persepctive and break down how exactly it works.
+
+Link to demo video: https://youtu.be/QRAmn0mwI4g
